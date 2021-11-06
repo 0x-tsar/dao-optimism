@@ -2133,12 +2133,12 @@
     "42": {
       "events": {},
       "links": {},
-      "address": "0xCEF16E8804b0C44867D20a9b7900DFa4dc316141",
-      "transactionHash": "0x6af116c7c5714f147540842ff10fb05384327988d895cb8d1031b88d3c080c45"
+      "address": "0xb7197046D24CFa46972c5fcEDd077E4dad5CDaC8",
+      "transactionHash": "0xe2b334dcd03e1361c66bd89bf8c715e95169da372129d092bdbe92b6ac3bf9e4"
     }
   },
   "schemaVersion": "3.4.3",
-  "updatedAt": "2021-11-05T23:18:49.635Z",
+  "updatedAt": "2021-11-06T03:25:53.498Z",
   "networkType": "ethereum",
   "devdoc": {
     "kind": "dev",
