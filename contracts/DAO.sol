@@ -85,6 +85,8 @@ contract DAO {
         votes[msg.sender][proposalHash] = true;
         if (side == Side.Yes) {
             proposal.votesYes += shares[msg.sender];
+            //votes are multiplied because we want to have more than 50% of the votes, which
+            // would be 0.5 but solidity cant handle floats, so we go around it
             if ((proposal.votesYes * 100) / totalShares > 50) {
                 proposal.status = Status.Approved;
             }
