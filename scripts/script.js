@@ -34,24 +34,19 @@ module.exports = async () => {
     //new proposal
     const PROPOSAL = web3.utils.fromAscii("hello world");
     // const bytesReceived = web3.utils.toAscii("HERE");
-    console.log(PROPOSAL);
-    console.log(typeof PROPOSAL);
-    console.log(`TEST: ${web3.utils.fromAscii(PROPOSAL)}`);
-    const tx = await dao.createProposal(PROPOSAL);
-    console.log(tx);
-    console.log(`proposal created!`);
-
-    // const proposal = dao.proposals(bytes('melhoras'));
-    // console.log(proposal);
+    // console.log(PROPOSAL);
+    // console.log(typeof PROPOSAL);
+    // console.log(`TEST: ${web3.utils.fromAscii(PROPOSAL)}`);
+    // const tx = await dao.createProposal(PROPOSAL);
+    // console.log(tx);
+    // console.log(`proposal created!`);
 
     // mapping(bytes32 => Proposal) public proposals;
-    // //check if user already voted so there is not double votes
+    //check if user already voted so there is not double votes
     // mapping(address => mapping(bytes32 => bool)) public votes;
 
-    // const tx = await daoToken.depo;
-
-    // const tx = await dao.createProposal("melhorias");
-    // console.log(tx);
+    const proposals = await dao.proposals(PROPOSAL);
+    console.log(proposals);
 
     //
     //
