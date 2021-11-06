@@ -24,10 +24,13 @@ contract DAO {
     }
 
     mapping(bytes32 => Proposal) public proposals;
+    //check if user already voted so there is not double votes
     mapping(address => mapping(bytes32 => bool)) public votes;
+    //1 share per governance token
     mapping(address => uint256) public shares;
     uint256 public totalShares;
     IERC20 public token;
+    //min amount of governance tokens someone must have to create a proposal
     uint256 constant CREATE_PROPOSAL_MIN_SHARE = 1000 * 10**18;
     uint256 constant VOTING_PERIOD = 7 days;
 
