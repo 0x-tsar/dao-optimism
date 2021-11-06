@@ -46,7 +46,21 @@ module.exports = async () => {
     // mapping(address => mapping(bytes32 => bool)) public votes;
 
     const proposals = await dao.proposals(PROPOSAL);
-    console.log(proposals);
+    console.log(web3.utils.toAscii(proposals.hash));
+
+    const STATUS = {
+      0: "Undecided",
+      1: "Approved",
+      2: "Rejected",
+    };
+
+    // console.log(STATUS[0]);
+    // console.log(parseInt(proposals.status));
+
+    console.log(`Author: ${proposals.author}`);
+    console.log(`votesYes: ${proposals.votesYes}`);
+    console.log(`votesNo: ${proposals.votesNo}`);
+    console.log(`status: ${STATUS[proposals.status]}`);
 
     //
     //
