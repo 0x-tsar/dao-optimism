@@ -4,5 +4,7 @@ pragma solidity ^0.8.0;
 import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 
 contract DaoToken is ERC20 {
-    constructor() ERC20("Dao Governance Token", "DGT") {}
+    constructor() ERC20("Dao Governance Token", "DGT") {
+        _mint(msg.sender, 100 * 10**18);
+    }
 }

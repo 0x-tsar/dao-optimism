@@ -2135,10 +2135,16 @@
       "links": {},
       "address": "0xb7197046D24CFa46972c5fcEDd077E4dad5CDaC8",
       "transactionHash": "0xe2b334dcd03e1361c66bd89bf8c715e95169da372129d092bdbe92b6ac3bf9e4"
+    },
+    "5777": {
+      "events": {},
+      "links": {},
+      "address": "0x3192cf98fa15C6373c2036aa9711b7d68fd838DE",
+      "transactionHash": "0x62a1947a407819e1b87e37a18d75631841928e1326ca37bf7aea8159577c12e5"
     }
   },
   "schemaVersion": "3.4.3",
-  "updatedAt": "2021-11-06T03:25:53.498Z",
+  "updatedAt": "2021-11-06T03:27:54.010Z",
   "networkType": "ethereum",
   "devdoc": {
     "kind": "dev",
