@@ -50,8 +50,18 @@ module.exports = async () => {
     // console.log(typeof PROPOSAL);
     // console.log(`TEST: ${web3.utils.fromAscii(PROPOSAL)}`);
     // const tx = await dao.createProposal(PROPOSAL);
-    const myShares = await dao.shares(account);
-    console.log(parseInt(myShares));
+    // console.log(tx);
+    const acc1shares = await dao.shares(account);
+    const acc2shares = await dao.shares(account2);
+    const acc3shares = await dao.shares(account3);
+    console.log(
+      parseInt(acc1shares),
+      parseInt(acc2shares),
+      parseInt(acc3shares)
+    );
+    //account 2 should not be able to create a proposal
+
+    // console.log(parseInt(myShares));
     // console.log(tx);
     // console.log(`proposal created!`);
 
@@ -64,7 +74,7 @@ module.exports = async () => {
     //check if user already voted so there is not double votes
     // mapping(address => mapping(bytes32 => bool)) public votes;
 
-    // const proposals = await dao.proposals(PROPOSAL);
+    const proposals = await dao.proposals(PROPOSAL);
     // console.log(web3.utils.toAscii(proposals.hash));
 
     const STATUS = {
@@ -76,15 +86,20 @@ module.exports = async () => {
     // console.log(STATUS[0]);
     // console.log(parseInt(proposals.status));
 
-    // console.log(`Author: ${proposals.author}`);
-    // console.log(`votesYes: ${proposals.votesYes}`);
-    // console.log(`votesNo: ${proposals.votesNo}`);
-    // console.log(`status: ${STATUS[proposals.status]}`);
+    console.log(`Author: ${proposals.author}`);
+    console.log(`votesYes: ${proposals.votesYes}`);
+    console.log(`votesNo: ${proposals.votesNo}`);
+    console.log(`status: ${STATUS[proposals.status]}`);
 
-    // const vote = await dao.vote(web3.utils.fromAscii("hello world"), 0);
+    console.log("------");
+    console.log("------");
+
+    // const vote = await dao.vote(PROPOSAL, 0, { from: account2 });
     // console.log(vote);
     // (bytes32 proposalHash, Side side) external {
 
+    // const totalShares = await dao.totalShares.call();
+    // console.log(`totalShares: ${totalShares}`);
     //
     //
   } catch (error) {
