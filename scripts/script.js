@@ -32,10 +32,17 @@ module.exports = async () => {
 
     //now that a deposit was made to the DAO protocol with the DAO TOKENS, I can create a
     //new proposal
-
-    const tx = await dao.createProposal("melhores 1.0");
+    const tx = await dao.createProposal(bytes32("melhoras"));
     console.log(tx);
-    console.log(`proposal created!`);
+    // console.log(`proposal created!`);
+
+    // const proposal = dao.proposals(bytes('melhoras'));
+    // console.log(proposal);
+
+    // mapping(bytes32 => Proposal) public proposals;
+    // //check if user already voted so there is not double votes
+    // mapping(address => mapping(bytes32 => bool)) public votes;
+
     // const tx = await daoToken.depo;
 
     // const tx = await dao.createProposal("melhorias");
