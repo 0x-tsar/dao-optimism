@@ -17,6 +17,11 @@ module.exports = async () => {
 
     // console.log("done!");
 
+    const v = web3.utils.toWei("20");
+    // await daoToken.approve(dao.address, v);
+    // const tx = await dao.deposit(v);
+    // console.log(tx);
+
     //first approve dao protocol to use dao tokens
     const balAcc1 = await daoToken.balanceOf(account);
     const balAcc2 = await daoToken.balanceOf(account2);
@@ -25,7 +30,19 @@ module.exports = async () => {
     console.log(formatValue(balAcc2));
     console.log(formatValue(balAcc3));
 
-    console.log(account);
+    //now that a deposit was made to the DAO protocol with the DAO TOKENS, I can create a
+    //new proposal
+
+    const tx = await dao.createProposal("melhores 1.0");
+    console.log(tx);
+    console.log(`proposal created!`);
+    // const tx = await daoToken.depo;
+
+    // const tx = await dao.createProposal("melhorias");
+    // console.log(tx);
+
+    //
+    //
   } catch (error) {
     console.log(error);
   }
