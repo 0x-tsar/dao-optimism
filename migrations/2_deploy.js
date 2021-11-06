@@ -5,6 +5,8 @@ module.exports = async (deployer, network, accounts) => {
   await deployer.deploy(DaoToken);
   await DaoToken.deployed();
 
-  await deployer.deploy(DAO);
+  await deployer.deploy(DAO, DaoToken.address);
   await DAO.deployed();
+
+  console.log("deployed!");
 };

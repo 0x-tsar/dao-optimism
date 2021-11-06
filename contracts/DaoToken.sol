@@ -1,10 +1,8 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.0
+pragma solidity ^0.8.0;
 
-import '@openzeppelin/contracts/token/ERC20/ERC20.sol';
+import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 
-contract DaoToken is ERC20{
-    constructor() ERC20('Dao Governance Token', 'DGT'){
-      _mint(msg.sender, 10*10**18);
-    }   
+contract DaoToken is ERC20 {
+    constructor() ERC20("Dao Governance Token", "DGT") {}
 }
