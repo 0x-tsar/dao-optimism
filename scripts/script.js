@@ -32,9 +32,14 @@ module.exports = async () => {
 
     //now that a deposit was made to the DAO protocol with the DAO TOKENS, I can create a
     //new proposal
-    const tx = await dao.createProposal(bytes32("melhoras"));
+    const PROPOSAL = web3.utils.fromAscii("hello world");
+    // const bytesReceived = web3.utils.toAscii("HERE");
+    console.log(PROPOSAL);
+    console.log(typeof PROPOSAL);
+    console.log(`TEST: ${web3.utils.fromAscii(PROPOSAL)}`);
+    const tx = await dao.createProposal(PROPOSAL);
     console.log(tx);
-    // console.log(`proposal created!`);
+    console.log(`proposal created!`);
 
     // const proposal = dao.proposals(bytes('melhoras'));
     // console.log(proposal);
