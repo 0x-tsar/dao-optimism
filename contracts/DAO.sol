@@ -38,6 +38,7 @@ contract DAO {
         token = IERC20(_token);
     }
 
+    //before voting we need to deposit
     function deposit(uint256 amount) external {
         shares[msg.sender] += amount;
         totalShares += amount;
