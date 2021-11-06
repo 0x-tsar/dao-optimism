@@ -62,6 +62,10 @@ module.exports = async () => {
     console.log(`votesNo: ${proposals.votesNo}`);
     console.log(`status: ${STATUS[proposals.status]}`);
 
+    const vote = await dao.vote(web3.utils.fromAscii("hello world"), 0);
+    console.log(vote);
+    // (bytes32 proposalHash, Side side) external {
+
     //
     //
   } catch (error) {

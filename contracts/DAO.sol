@@ -40,9 +40,9 @@ contract DAO {
 
     //before voting we need to deposit
     function deposit(uint256 amount) external {
+        token.transferFrom(msg.sender, address(this), amount);
         shares[msg.sender] += amount;
         totalShares += amount;
-        token.transferFrom(msg.sender, address(this), amount);
     }
 
     function withdraw(uint256 amount) external {
